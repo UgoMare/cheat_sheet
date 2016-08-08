@@ -47,6 +47,11 @@ $ rails new my_project -T
 $ rails generate controller my_controller some_action another_action
 ```
 
+* destroy an already created controller
+```bash
+$ rails destroy controller my_controller some_action another_action
+```
+
 * add new gems
 ```bash
 $ bundle install

@@ -126,3 +126,14 @@ $ rails g migration RemoveAddressFromRestaurants address:string
 ```
 
 ## Beyond CRUD
+* Scaffold generator
+```bash
+$ rails g migration RemoveAddressFromRestaurants address:string
+$ rails db:migrate
+```
+
+```ruby
+if foo == bar
+  "Markdown is awesome."
+end
+```

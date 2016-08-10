@@ -126,14 +126,53 @@ $ rails g migration RemoveAddressFromRestaurants address:string
 ```
 
 ## Beyond CRUD
-* Scaffold generator
+
+* scaffold generator
 ```bash
-$ rails g migration RemoveAddressFromRestaurants address:string
+$ rails g scaffold Restaurant name:string address:string description:text stars:integer
 $ rails db:migrate
 ```
 
+### Additional routing techniques
+
+* collection routes
 ```ruby
-if foo == bar
-  "Markdown is awesome."
+resources :restaurants do
+  collection do                       # collection => no restaurant id in URL
+    get 'top', to: "restaurants#top"  # RestaurantsController#top
+  end
 end
 ```
+
+* member routes
+```ruby
+resources :restaurants do
+  member do                             # member => restaurant id in URL
+    get 'chef', to: "restaurants#chef"  # RestaurantsController#chef
+  end
+end
+```
+
+* nested routes
+```ruby
+resources :restaurants do
+  resources :reviews, only: [:new, :create]
+end
+```
+
+### Validation
+
+* example
+```ruby
+# app/models/restaurant.rb
+class Restaurant < ApplicationRecord
+  validates :stars, inclusion: { in: [1,2,3], allow_nil: false }
+  validates :name, uniqueness: true, presence: true
+  validates :address, presence: true
+end
+```
+
+
+
+
+

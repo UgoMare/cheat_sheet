@@ -3,8 +3,8 @@
 * [Git](#git)
 * [Rails](#rails)
 * [Rake](#rake)
-* [CRUD](#CRUD)
-* [Beyond CRUD](#Beyond Crud)
+* [CRUD](#Crud)
+* [Beyond Crud](#Beyond Crud)
 
 ## Git
 
@@ -103,7 +103,7 @@ $ rake db:rollback
 $ rake db:seed
 ```
 
-## CRUD
+## Crud
 
 * generate model example
 ```bash

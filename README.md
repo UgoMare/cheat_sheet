@@ -3,6 +3,8 @@
 * [Git](#git)
 * [Rails](#rails)
 * [Rake](#rake)
+* [CRUD](#CRUD)
+* [Beyond CRUD](#Beyond Crud)
 
 ## Git
 
@@ -100,3 +102,27 @@ $ rake db:rollback
 ```bash
 $ rake db:seed
 ```
+
+## CRUD
+
+* generate model example
+```bash
+$ rails g model Restaurant name:string stars:integer
+```
+
+* destroy model example
+```bash
+$ rails d model Restaurant
+```
+
+* generate migration - add column
+```bash
+$ rails g migration AddAddressToRestaurants address:string
+```
+
+* generate migration - remove column
+```bash
+$ rails g migration RemoveAddressFromRestaurants address:string
+```
+
+## Beyond CRUD
